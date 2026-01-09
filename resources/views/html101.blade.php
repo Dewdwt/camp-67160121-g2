@@ -4,7 +4,16 @@
 <div class="container mt-5">
     <h1>Workshop #HTML - FORM</h1>
 
-    <!-- ฟอร์มหลัก -->
+    <!-- เพิ่มส่วนเล็กๆ สำหรับ Pokedex -->
+    <div class="text-center mb-4">
+        <a href="{{ route('pokedex.index') }}" class="btn btn-sm btn-outline-danger mb-2"
+           style="border-radius: 20px; padding: 8px 20px;">
+            <i class="fas fa-dragon me-1"></i> ไปยังระบบ Pokedex
+        </a>
+        <p class="text-muted small">ระบบจัดการข้อมูลโปเกมอน (CRUD System)</p>
+    </div>
+
+    <!-- ฟอร์มหลัก (โค้ดเดิมทั้งหมด) -->
     <form class="row g-3 needs-validation"
           action="{{ route('form.result') }}"
           method="POST"
@@ -109,9 +118,26 @@
             <button class="btn btn-secondary" type="reset">รีเซ็ต</button>
         </div>
     </form>
+
+    <!-- เพิ่มลิงก์ Pokedex ที่ด้านล่างแบบไม่รบกวนฟอร์มเดิม -->
+    <div class="mt-5 pt-4 border-top text-center">
+        <h5 class="text-muted mb-3">ระบบอื่นๆ ใน Workshop</h5>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{{ route('pokedex.index') }}" class="btn btn-sm btn-danger">
+                <i class="fas fa-dragon me-1"></i> Pokedex System
+            </a>
+            <a href="/mycontroller" class="btn btn-sm btn-primary">
+                <i class="fas fa-cogs me-1"></i> MyController
+            </a>
+            <a href="/flight" class="btn btn-sm btn-success">
+                <i class="fas fa-plane me-1"></i> Flight
+            </a>
+        </div>
+        <p class="text-muted small mt-2">Pokedex System: ระบบจัดการข้อมูลโปเกมอนแบบครบ CRUD</p>
+    </div>
 </div>
 
-<!-- Bootstrap Validation Script -->
+<!-- Bootstrap Validation Script (โค้ดเดิม) -->
 <script>
 (() => {
   'use strict'
@@ -127,4 +153,16 @@
   })
 })()
 </script>
+
+<!-- เพิ่มสไตล์เล็กน้อยสำหรับปุ่ม Pokedex -->
+<style>
+.btn-outline-danger {
+    border-color: #ef5350;
+    color: #ef5350;
+}
+.btn-outline-danger:hover {
+    background-color: #ef5350;
+    color: white;
+}
+</style>
 @endsection
